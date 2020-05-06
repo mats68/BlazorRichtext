@@ -34,22 +34,21 @@
 @code {
 
     BlazoredTextEditor QuillHtml;
+
+    [Parameter]
     public string QuillHTMLContent { get; set; }
 
 
-    public async void SetHTML()
-    {
-        string QuillContent =
-            @"<a href='http://BlazorHelpWebsite.com/'>" +
-            "<img src='images/BlazorHelpWebsite.gif' /></a>";
-
-        await this.QuillHtml.LoadHTMLContent(QuillContent);
-        StateHasChanged();
-    }
-
-    //protected override Task OnParametersSetAsync()
+    //protected override async Task OnParametersSetAsync()
     //{
+    //    // QuillHtml is null
+    //    await this.QuillHtml.LoadHTMLContent(QuillHTMLContent);
+    //}
 
+    //protected override async Task OnAfterRenderAsync(bool firstRender)
+    //{
+    //    // Error: Microsoft.JSInterop.JSException: Cannot read property 'root' of undefined
+    //    await this.QuillHtml.LoadHTMLContent(QuillHTMLContent);
     //}
 
 
